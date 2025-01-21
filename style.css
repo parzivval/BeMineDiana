@@ -1,123 +1,127 @@
+/* Reset and box-sizing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body styles */
 body {
-    font-family: 'Brush Script MT', cursive;
-    background-color: deeppink; /* Corrected color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
+  font-family: 'Brush Script MT', cursive;
+  background-color: deeppink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
 }
 
+/* Responsive button adjustments */
 .btns button {
-    max-width: 90%;
-    box-sizing: border-box;
+  max-width: 90%;
+  box-sizing: border-box;
 }
 
+/* Media Query for small screens */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 20px;
-    }
-
-    .btns button {
-        padding: 8px 16px;
-    }
+  h1 {
+    font-size: 20px;
+  }
+  .btns button {
+    padding: 8px 16px;
+  }
 }
 
+/* Heading style */
 h1 {
-    color: white;
-    margin: 20px 0;
-    font-size: 48px;
+  color: white;
+  margin: 20px 0;
+  font-size: 48px;
 }
 
-/* Container for the image */
+/* Initial GIF container */
 .image {
-    width: 300px;
-    height: auto; /* We'll let the img dictate height */
-    margin: 20px auto; /* Centered horizontally */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 300px;
+  height: 300px;
+  /* The GIF that shouldn't be cropped */
+  background-image: url("./img/forever-valentine-love.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensures the entire GIF is shown */
+  margin: 20px auto; /* Center horizontally */
 }
 
-/* The actual GIF image */
-.image img {
-    width: 300px;
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    border: none; 
-}
-
+/* Buttons */
 .btns button {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-#nooo:hover, 
+#nooo:hover,
 #yessir:hover {
-    background-color: lightpink;
+  background-color: lightpink;
 }
 
+/* Footer text */
 p {
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20px;
 }
 
+/* Floating hearts container */
 .hearts-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
+/* Main content container */
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%; 
-    position: relative;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
+/* Floating hearts animation */
 @keyframes float {
-    0% {
-        transform: translateX(0) translateY(100%);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(20vw) translateY(-100vh);
-        opacity: 0;
-    }
+  0% {
+    transform: translateX(0) translateY(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20vw) translateY(-100vh);
+    opacity: 0;
+  }
 }
 
 .heart {
-    position: absolute;
-    bottom: -100px;
-    color: pink;
-    animation: float linear infinite;
-    opacity: 0; 
-    font-size: 24px; 
+  position: absolute;
+  bottom: -100px;
+  color: pink;
+  animation: float linear infinite;
+  opacity: 0;
+  font-size: 24px;
 }
 
+/* Text fade animation */
 @keyframes fadeOutIn {
   0% {
     opacity: 1;
@@ -129,15 +133,11 @@ p {
     opacity: 1;
   }
 }
-
 .text-change-animation {
   animation: fadeOutIn 1s ease;
 }
 
-.image-change-animation {
-  animation: fadeScaleIn 1s ease;
-}
-
+/* Image fade+scale animation */
 @keyframes fadeScaleIn {
   0% {
     opacity: 0;
@@ -147,4 +147,7 @@ p {
     opacity: 1;
     transform: scale(1);
   }
+}
+.image-change-animation {
+  animation: fadeScaleIn 1s ease;
 }
