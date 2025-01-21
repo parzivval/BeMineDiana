@@ -39,16 +39,24 @@ h1 {
     margin: 20px 0;
     font-size: 48px;
 }
+
+/* Container for the image */
 .image {
     width: 300px;
-    height: 300px;
-    background-image: url("./img/forever-valentine-love.gif");
-    background-position: center;
-    background-size: cover;
-    border: 0; /* No border */
+    height: auto; /* We'll let the img dictate height */
     margin: 20px auto; /* Centered horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* The actual GIF image */
+.image img {
+    width: 300px;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    border: none; 
+}
 
 .btns button {
     padding: 10px 20px;
@@ -59,7 +67,8 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-#nooo:hover, #yessir:hover {
+#nooo:hover, 
+#yessir:hover {
     background-color: lightpink;
 }
 
@@ -79,14 +88,12 @@ p {
     z-index: 0;
 }
 
-
-
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Ensure it spans the full width */
+    width: 100%; 
     position: relative;
     z-index: 1;
 }
@@ -107,10 +114,9 @@ p {
     bottom: -100px;
     color: pink;
     animation: float linear infinite;
-    opacity: 0; /* Start fully transparent */
-    font-size: 24px; /* Adjust size as needed */
+    opacity: 0; 
+    font-size: 24px; 
 }
-
 
 @keyframes fadeOutIn {
   0% {
