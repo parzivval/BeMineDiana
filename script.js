@@ -1,9 +1,13 @@
 document.getElementById('yessir').addEventListener('click', () => {
-    const imageDiv = document.querySelector('.image');
+    // Grab the <img> inside .image instead of the div background
+    const image = document.querySelector('.image img');
     const header = document.querySelector('h1');
 
-    imageDiv.style.backgroundImage = "url('./img/val.png')";
-    imageDiv.classList.add('image-change-animation');
+    // Change the src of the <img> to val.png
+    image.src = "./img/val.png";
+    // Add an animation class if desired
+    image.classList.add('image-change-animation');
+
     header.textContent = "You had no options🤍";
     header.classList.add('text-change-animation');
 });
@@ -24,24 +28,29 @@ function createHeart() {
     const heart = document.createElement('div');
     heart.className = 'heart';
     heart.textContent = '🤍'; // Using the heart emoji
+
     // Randomly position hearts at the start
     heart.style.left = `${Math.random() * 100}%`;
+
     // Randomize the size of the hearts
-    heart.style.fontSize = `${Math.random() * (30 - 10) + 10}px`; // Sizes between 10px and 30px
-    // Randomize the animation duration to make the movement vary
-    heart.style.animationDuration = `${Math.random() * (5 - 2) + 2}s`; // Durations between 2s and 5s
-    // Start animation at a random delay to avoid a uniform flow
+    heart.style.fontSize = `${Math.random() * (30 - 10) + 10}px`; // 10px to 30px
+
+    // Randomize the animation duration
+    heart.style.animationDuration = `${Math.random() * (5 - 2) + 2}s`; // 2s to 5s
+
+    // Start animation at a random delay
     heart.style.animationDelay = `${Math.random() * 2}s`;
-    // Adjust the sideways movement to ensure hearts float more naturally
-    heart.style.transform = `translateX(${Math.random() * (50 - -50) + -50}%)`; // Starts at random X positions
+
+    // Adjust the sideways movement for more natural float
+    heart.style.transform = `translateX(${Math.random() * (50 - -50) + -50}%)`;
+
     document.body.appendChild(heart);
 
-    // Remove heart after it finishes floating to avoid DOM overload
+    // Remove heart after it finishes floating
     setTimeout(() => {
         heart.remove();
-    }, 5000); // Adjust based on the longest possible animation duration
+    }, 5000);
 }
 
-// Create a new heart every 300 milliseconds
+// Create a new heart every 300 ms
 setInterval(createHeart, 300);
-
