@@ -1,115 +1,97 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Brush Script MT', cursive;
-    background-color: deeppink; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-}
-
-.btns button {
-    max-width: 90%;
-    box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 20px;
-    }
-
-    .btns button {
-        padding: 8px 16px;
-    }
+  font-family: 'Brush Script MT', cursive;
+  background-color: deeppink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
 }
 
 h1 {
-    color: white;
-    margin: 20px 0;
-    font-size: 48px;
+  color: white;
+  margin: 20px 0;
+  font-size: 48px;
 }
-.image {
-    width: 300px;
-    height: 300px;
-    background-image: url("./img/forever-valentine-love.gif");
-    background-position: center;
-    background-size: cover;
-    border: 0; 
-    margin: 20px auto; 
 
+.image {
+  width: 300px;
+  height: 300px;
+  background-image: url("./img/forever-valentine-love.gif");
+  background-position: center;
+  background-size: cover;
+  border: 0;
+  margin: 20px auto;
+}
 
 .btns button {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-#nooo:hover, #yessir:hover {
-    background-color: lightpink;
+.btns button:hover {
+  background-color: lightpink;
 }
 
 p {
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20px;
 }
 
 .hearts-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
-
-
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%; 
-    position: relative;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes float {
-    0% {
-        transform: translateX(0) translateY(100%);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(20vw) translateY(-100vh);
-        opacity: 0;
-    }
+  0% {
+    transform: translateX(0) translateY(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20vw) translateY(-100vh);
+    opacity: 0;
+  }
 }
 
 .heart {
-    position: absolute;
-    bottom: -100px;
-    color: pink;
-    animation: float linear infinite;
-    opacity: 0; 
-    font-size: 24px; 
+  position: absolute;
+  bottom: -100px;
+  color: pink;
+  animation: float linear infinite;
+  font-size: 24px;
 }
-
 
 @keyframes fadeOutIn {
   0% {
@@ -141,6 +123,7 @@ p {
     transform: scale(1);
   }
 }
+
 .stylish-button {
   margin-top: 20px;
   display: inline-block;
@@ -170,13 +153,13 @@ p {
 
 @keyframes pulse {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
   50% {
-      transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
-      transform: scale(1);
+    transform: scale(1);
   }
 }
 
@@ -198,9 +181,19 @@ p {
 
 @keyframes fadeIn {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .btns button {
+    padding: 8px 16px;
   }
 }
