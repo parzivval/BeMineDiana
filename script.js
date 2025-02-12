@@ -39,10 +39,10 @@ noButton.addEventListener('touchstart', moveButton, { passive: true });
 
 let currentSlide = 0;
 const slides = [
-    './img/IMG_8572.jpg',
-    './img/IMG_9067.jpg',
+    './img/IMG_8572.JPG',
+    './img/IMG_9067.JPG',
     './img/IMG_9641.jpg',
-    './img/IMG_9665.jpg',
+    './img/IMG_9665.JPG',
     './img/IMG_9713.jpg',
     './img/IMG_9746.jpg',
     './img/IMG_9820.jpg'
